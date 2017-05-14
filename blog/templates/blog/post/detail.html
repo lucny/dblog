@@ -13,9 +13,7 @@
     </p>
 
     {% with comments.count as total_comments %}
-    <h2>
-    {{ total_comments }} comment{{ total_comments|pluralize }}
-    </h2>
+        <h2>{{ total_comments }} comment{{ total_comments|pluralize }}</h2>
     {% endwith %}
 
     {% for comment in comments %}
@@ -36,6 +34,13 @@
             {% csrf_token %}
         <p><input type="submit" value="Add comment"></p>
         </form>
-{% endif %}
+    {% endif %}
+
+    <h2>Similar posts</h2>
+    {% for post in similar_posts %}
+        <p><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></p>
+    {% empty %}
+        There are no similar posts yet.
+    {% endfor %}
 
 {% endblock %}
