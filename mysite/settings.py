@@ -82,6 +82,12 @@ DATABASES = {
 }
 
 
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'ker7756@gmail.com'
+EMAIL_HOST_PASSWORD = 'keram7756'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
 
